@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101624">
+  <meta name="description" content="크리스마스 얼음 트랙에서 펼쳐지는 6인 레트로 카트 레이스">
+  <title>Mario Kart · Frosty Circuit</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="scene.js"></script>
+  <script defer src="game.js"></script>
+</head>
+<body>
+  <main class="arcade">
+    <header class="topbar">
+      <div class="brand"><span class="checker" aria-hidden="true"></span> KART ARCADE</div>
+      <button class="sound" id="sound" aria-pressed="true"><span id="sound-icon" aria-hidden="true">♫</span> <span id="sound-label">사운드 켜짐</span></button>
+    </header>
+
+    <section class="heading" aria-labelledby="title">
+      <div class="season"><span aria-hidden="true">❄</span> WINTER GRAND PRIX</div>
+      <h1 id="title">MARIO KART <span>FROSTY CIRCUIT</span></h1>
+      <p>눈 덮인 크리스마스 마을을 질주하는 6인 얼음 레이스</p>
+    </section>
+
+    <div class="layout">
+      <section class="race-panel" aria-label="얼음 트랙">
+        <div class="panel-header"><span class="live-dot"></span> FROSTY VILLAGE <span class="track-laps">3 LAPS</span></div>
+        <div class="viewport" id="viewport">
+          <canvas id="race" width="480" height="288" aria-label="크리스마스 마을 카트 경주 화면"></canvas>
+          <div class="hud">
+            <div class="hud-box"><span>POSITION</span><strong id="place">6<small>/6</small></strong></div>
+            <div class="hud-box laps"><span>LAP</span><strong id="lap">1<small>/3</small></strong></div>
+          </div>
+          <div class="speed"><strong id="speed">0</strong><span>KM/H</span></div>
+          <div class="race-message" id="race-message" role="status"></div>
+          <div class="start-ui" id="start-ui">
+            <p id="result" hidden></p>
+            <button class="start" id="start"><span aria-hidden="true">▶</span> 레이스 시작</button>
+            <div class="key-hint"><kbd>Enter</kbd> 로 시작</div>
+          </div>
+        </div>
+        <div class="race-footer">
+          <span><i class="ice-dot"></i> 얼음 트랙</span>
+          <span id="timer">00:00.00</span>
+          <span class="item-info"><i class="gift-icon" aria-hidden="true"></i> <span id="item">선물 상자 없음</span></span>
+        </div>
+        <div class="touch" aria-label="터치 조작">
+          <div><button data-key="ArrowLeft" aria-label="왼쪽">◀</button><button data-key="ArrowRight" aria-label="오른쪽">▶</button></div>
+          <div><button data-key="ShiftLeft" aria-label="드리프트">↻</button><button data-key="Space" aria-label="아이템">🎁</button><button class="pedal" data-key="ArrowUp" aria-label="가속">▲</button><button data-key="ArrowDown" aria-label="브레이크">▼</button></div>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="ranking-title">
+          <h2 id="ranking-title"><span class="medal" aria-hidden="true">🏆</span> 레이스 순위 <small>6 RACERS</small></h2>
+          <ol class="ranking" id="ranking"></ol>
+        </section>
+        <section class="card controls" aria-labelledby="controls-title">
+          <h2 id="controls-title"><span class="control-icon" aria-hidden="true">⌨</span> 조작 방법</h2>
+          <dl>
+            <div><dt>가속 / 브레이크</dt><dd><kbd>↑</kbd> <kbd>↓</kbd></dd></div>
+            <div><dt>좌우 조향</dt><dd><kbd>←</kbd> <kbd>→</kbd></dd></div>
+            <div><dt>드리프트</dt><dd><kbd>Shift</kbd></dd></div>
+            <div><dt>선물 부스터</dt><dd><kbd>Space</kbd></dd></div>
+          </dl>
+        </section>
+      </aside>
+    </div>
+    <footer class="bottom"><span>❄ &nbsp; WINTER GRAND PRIX</span><span>비공식 팬 게임</span></footer>
+  </main>
+</body>
+</html>
